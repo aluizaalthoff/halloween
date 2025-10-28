@@ -13,57 +13,107 @@
         
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b00 100%);
+            background: #000;
             color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
         }
         
         .container {
-            background: rgba(0, 0, 0, 0.8);
-            border: 3px solid #ff6b00;
-            border-radius: 20px;
-            padding: 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b00 100%);
+            border: 4px solid #ff6b00;
+            width: 100vw;
+            max-width: 450px;
+            height: 100vh;
+            max-height: 800px;
+            aspect-ratio: 9/16;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 35px 30px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
-            max-width: 500px;
-            width: 100%;
+            box-shadow: 0 0 40px rgba(255, 107, 0, 0.6);
+            overflow: hidden;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
         }
         
         h1 {
             color: #ff6b00;
-            margin: 0 0 10px 0;
+            margin: 0;
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
         
+        .emoji {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        
+        .instagram-section {
+            padding: 15px 0;
+            border-bottom: 2px solid rgba(255, 107, 0, 0.3);
+        }
+        
+        .instagram-label {
+            color: #ffa500;
+            font-size: 1.15em;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+        
+        .instagram-button {
+            background: linear-gradient(135deg, #c13584, #e1306c, #fd1d1d, #f56040, #fcaf45);
+            color: white;
+            padding: 16px 25px;
+            border-radius: 12px;
+            font-size: 1.25em;
+            font-weight: bold;
+            border: 3px solid #fff;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 90%;
+            max-width: 300px;
+        }
+        
+        .instagram-button:active {
+            transform: scale(0.98);
+        }
+        
         .subtitle {
             color: #ffa500;
-            margin-bottom: 30px;
-            font-size: 1.1em;
+            margin: 15px 0;
+            font-size: 1.05em;
             line-height: 1.4;
         }
         
         .email-section {
-            margin: 30px 0;
+            margin: 15px 0;
         }
         
         .email-label {
             color: #ffa500;
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            font-size: 1.15em;
+            margin-bottom: 12px;
             font-weight: bold;
         }
         
         .email-button {
             background: linear-gradient(135deg, #ff6b00, #ff8c00);
             color: white;
-            padding: 25px 35px;
-            border-radius: 15px;
-            font-size: 1.4em;
+            padding: 16px 25px;
+            border-radius: 12px;
+            font-size: 1.15em;
             font-weight: bold;
             border: 3px solid #ffa500;
             cursor: pointer;
@@ -71,13 +121,8 @@
             transition: all 0.3s ease;
             display: inline-block;
             word-break: break-all;
-            width: 100%;
-            max-width: 400px;
-        }
-        
-        .email-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
+            width: 90%;
+            max-width: 320px;
         }
         
         .email-button:active {
@@ -86,11 +131,12 @@
         
         .copied-message {
             color: #00ff00;
-            font-size: 1.3em;
-            margin-top: 20px;
+            font-size: 1em;
+            margin-top: 10px;
             font-weight: bold;
             opacity: 0;
             transition: opacity 0.3s ease;
+            height: 20px;
         }
         
         .copied-message.show {
@@ -98,100 +144,82 @@
         }
         
         .suggestions {
-            margin: 40px 0 20px 0;
-            font-size: 1.2em;
+            margin: 15px 0;
+            font-size: 1em;
             color: #ffa500;
-            font-weight: bold;
-        }
-        
-        .amounts {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        
-        .amount {
-            background: linear-gradient(135deg, #ff6b00, #ff8c00);
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 1.5em;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
-            border: 2px solid #ffa500;
         }
         
         .instructions {
-            margin-top: 40px;
-            padding: 25px;
+            padding: 15px;
             background: rgba(255, 107, 0, 0.1);
             border-radius: 10px;
-            font-size: 1em;
-            line-height: 1.8;
+            font-size: 0.85em;
+            line-height: 1.5;
         }
         
         .instructions strong {
             color: #ffa500;
-            font-size: 1.1em;
         }
         
-        .emoji {
-            font-size: 2.5em;
-            margin: 20px 0;
-        }
-        
-        @media (max-width: 600px) {
+        @media (max-width: 450px) {
+            .container {
+                max-width: 100vw;
+                max-height: 100vh;
+                border: none;
+                border-radius: 0;
+            }
+            
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
-            .subtitle {
-                font-size: 1em;
-            }
-            .email-button {
-                font-size: 1.1em;
-                padding: 20px 25px;
+            
+            .emoji {
+                font-size: 2.2em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎃 Happy Halloween! 🎃</h1>
-        <div class="subtitle">
-            This costume cost my soul and hundreds of dollars —<br>
-            pick which one to return 👹
-        </div>
-        
-        <div class="emoji">👻 💀 🦇</div>
-        
-        <div class="email-section">
-            <div class="email-label">Tap to copy my email:</div>
-            <button class="email-button" onclick="copyEmail()">
-                aluizaalthoff@gmail.com
-            </button>
-            <div class="copied-message" id="copiedMsg">✓ Email Copied!</div>
-        </div>
-        
-        <div class="suggestions">Suggested amounts:</div>
-        <div class="amounts">
-            <div class="amount">$2</div>
-            <div class="amount">$5</div>
-            <div class="amount">$10</div>
-        </div>
-        
-        <div class="instructions">
-            <strong>How to send Interac e-Transfer:</strong><br>
-            1. Copy email above<br>
-            2. Open your banking app<br>
-            3. Select "Send Money" or "Interac e-Transfer"<br>
-            4. Paste email & choose amount<br>
-            5. Send — Thank you! 🎃
+        <div class="content">
+            <div>
+                <h1>Happy Halloween!</h1>
+                <div class="emoji">👻 💀 🦇</div>
+            </div>
+            
+            <div class="instagram-section">
+                <div class="instagram-label">Tag me on Instagram!</div>
+                <button class="instagram-button" onclick="copyInstagram()">
+                    @ana_althoff
+                </button>
+                <div class="copied-message" id="copiedInstaMsg">✓ Instagram Copied!</div>
+            </div>
+            
+            <div class="subtitle">
+                This costume cost my soul and hundreds of dollars,<br>
+                pick which one to return!
+            </div>
+            
+            <div class="email-section">
+                <div class="email-label">Send me a tip:</div>
+                <button class="email-button" onclick="copyEmail()">
+                    aluizaalthoff@gmail.com
+                </button>
+                <div class="copied-message" id="copiedMsg">✓ Email Copied!</div>
+            </div>
+            
+            <div class="suggestions">Suggested amounts: $2, $5, $10</div>
+            
+            <div class="instructions">
+                <strong>How to send:</strong><br>
+                Open banking app → Interac e-Transfer → Paste email → Send
+            </div>
         </div>
     </div>
     
     <script>
         const email = 'aluizaalthoff@gmail.com';
+        const instagram = '@ana_althoff';
         
         function copyEmail() {
             navigator.clipboard.writeText(email).then(function() {
@@ -201,23 +229,38 @@
                     msg.classList.remove('show');
                 }, 2500);
             }).catch(function(err) {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = email;
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    const msg = document.getElementById('copiedMsg');
-                    msg.classList.add('show');
-                    setTimeout(function() {
-                        msg.classList.remove('show');
-                    }, 2500);
-                } catch (err) {
-                    alert('Email: ' + email);
-                }
-                document.body.removeChild(textArea);
+                fallbackCopy(email, 'copiedMsg');
             });
+        }
+        
+        function copyInstagram() {
+            navigator.clipboard.writeText(instagram).then(function() {
+                const msg = document.getElementById('copiedInstaMsg');
+                msg.classList.add('show');
+                setTimeout(function() {
+                    msg.classList.remove('show');
+                }, 2500);
+            }).catch(function(err) {
+                fallbackCopy(instagram, 'copiedInstaMsg');
+            });
+        }
+        
+        function fallbackCopy(text, msgId) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                const msg = document.getElementById(msgId);
+                msg.classList.add('show');
+                setTimeout(function() {
+                    msg.classList.remove('show');
+                }, 2500);
+            } catch (err) {
+                alert('Copy: ' + text);
+            }
+            document.body.removeChild(textArea);
         }
     </script>
 </body>
